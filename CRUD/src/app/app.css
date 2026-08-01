@@ -1,0 +1,427 @@
+/* ==========================
+   ESTILOS GENERALES
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef2fb;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+    height:80px;
+    background:#6f4cd8;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 40px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.logo{
+
+    font-size:28px;
+    font-weight:bold;
+
+}
+
+.navbar ul{
+
+    display:flex;
+    list-style:none;
+    gap:40px;
+
+}
+
+.navbar li{
+
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.navbar li:hover{
+
+    color:#ddd;
+
+}
+
+.activo{
+
+    background:rgba(255,255,255,.20);
+    padding:10px 20px;
+    border-radius:20px;
+
+}
+
+.btnAgregar{
+
+    border:none;
+    background:white;
+    color:#6f4cd8;
+
+    padding:12px 25px;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+/* ==========================
+   CONTENEDOR
+========================== */
+
+.contenedor{
+
+    width:90%;
+    margin:40px auto;
+
+}
+
+/* ==========================
+   ENCABEZADO
+========================== */
+
+.encabezado{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.encabezado h1{
+
+    color:#333;
+    font-size:35px;
+
+}
+
+.encabezado input{
+
+    width:350px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:25px;
+
+    outline:none;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+/* ==========================
+   TARJETAS
+========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.formulario h2{
+
+    margin-bottom:20px;
+    color:#444;
+
+}
+
+.inputs{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:15px;
+
+}
+
+.inputs input{
+
+    padding:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    outline:none;
+
+}
+
+.inputs input:focus{
+
+    border-color:#6f4cd8;
+
+}
+
+.inputs button{
+
+    background:#6f4cd8;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+}
+
+.inputs button:hover{
+
+    background:#5a3dc1;
+
+}
+
+/* ==========================
+   TABLA
+========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#f5f6fb;
+
+}
+
+th{
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#555;
+
+    font-size:15px;
+
+}
+
+td{
+
+    padding:20px;
+
+    border-top:1px solid #eee;
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#fafafa;
+
+}
+
+/* ==========================
+   ESTADOS
+========================== */
+
+.estado{
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:13px;
+
+    display:inline-block;
+
+}
+
+.vista{
+
+    background:#1abc9c;
+
+}
+
+.pendiente{
+
+    background:#f39c12;
+
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+.editar{
+
+    background:#3498db;
+
+    color:white;
+
+    border:none;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    margin-right:8px;
+
+}
+
+.estadoBtn{
+
+    background:#2ecc71;
+
+    color:white;
+
+    border:none;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    margin-right:8px;
+
+}
+
+.eliminar{
+
+    background:#e74c3c;
+
+    color:white;
+
+    border:none;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+}
+
+.editar:hover{
+
+    background:#217dbb;
+
+}
+
+.estadoBtn:hover{
+
+    background:#27ae60;
+
+}
+
+.eliminar:hover{
+
+    background:#c0392b;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:1100px){
+
+.inputs{
+
+grid-template-columns:1fr;
+
+}
+
+.encabezado{
+
+flex-direction:column;
+
+gap:20px;
+
+align-items:flex-start;
+
+}
+
+.encabezado input{
+
+width:100%;
+
+}
+
+.navbar{
+
+flex-direction:column;
+
+height:auto;
+
+padding:20px;
+
+gap:20px;
+
+}
+
+.navbar ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+table{
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+}

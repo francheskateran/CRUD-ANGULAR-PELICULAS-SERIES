@@ -1,0 +1,182 @@
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        🎬 Pelicheska
+
+    </div>
+
+    <ul>
+
+      
+        <li class="activo">Películas</li>
+      
+     
+
+    </ul>
+
+
+</nav>
+
+
+<!-- CONTENIDO -->
+
+<div class="contenedor">
+
+    <div class="encabezado">
+
+        <h1>Lista de Películas</h1>
+
+    </div>
+
+
+    <!-- FORMULARIO -->
+
+    <div class="card formulario">
+
+        <h2>
+
+            {{indiceEditar==null ? 'Agregar Película' : 'Editar Película'}}
+
+        </h2>
+
+        <div class="inputs">
+
+            <input
+                [(ngModel)]="titulo"
+                placeholder="Título">
+
+            <input
+                [(ngModel)]="genero"
+                placeholder="Género">
+
+            <input
+                type="number"
+                [(ngModel)]="anio"
+                placeholder="Año">
+
+            <input
+                type="number"
+                [(ngModel)]="duracion"
+                placeholder="Duración">
+
+            <button
+                (click)="agregar()">
+
+                {{indiceEditar==null ? 'Agregar' : 'Guardar'}}
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- TABLA -->
+
+    <div class="card">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Película</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                    <th>Duración</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr *ngFor="let pelicula of peliculas; let i=index">
+
+                    <td>
+
+                        {{pelicula.titulo}}
+
+                    </td>
+
+                    <td>
+
+                        {{pelicula.genero}}
+
+                    </td>
+
+                    <td>
+
+                        {{pelicula.anio}}
+
+                    </td>
+
+                    <td>
+
+                        {{pelicula.duracion}} min
+
+                    </td>
+
+                    <td>
+
+                        <span
+                            class="estado vista"
+                            *ngIf="pelicula.vista">
+
+                            ✔ Vista
+
+                        </span>
+
+                        <span
+                            class="estado pendiente"
+                            *ngIf="!pelicula.vista">
+
+                            ⏳ Pendiente
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <button
+                            class="editar"
+                            (click)="editar(i)">
+
+                            ✏
+
+                        </button>
+
+                        <button
+                            class="estadoBtn"
+                            (click)="cambiarEstado(i)">
+
+                            ✔
+
+                        </button>
+
+                        <button
+                            class="eliminar"
+                            (click)="eliminar(i)">
+
+                            🗑
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
